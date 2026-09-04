@@ -16,7 +16,11 @@ poner.**
 
 Los SVG usan `currentColor`, así que una sola ruta sirve para claro y para oscuro.
 
-## Los ficheros
+## Los ficheros, por para qué sirven
+
+Tres carpetas, y el criterio no es el formato sino **quién los consume**: la marca desnuda, lo que se sube a un perfil, y lo que acompaña a un juego.
+
+### `simbolo/` — la marca desnuda
 
 | Fichero | Para qué |
 |---|---|
@@ -24,11 +28,21 @@ Los SVG usan `currentColor`, así que una sola ruta sirve para claro y para oscu
 | `trikyname-mark-small.svg` | Para **≤32 px**: pepitas engordadas y sin migas. Ver abajo. |
 | `trikyname-mark-1024.png` | Crema, transparente. Formularios, prensa, festivales. |
 | `trikyname-mark-dark-1024.png` | Cacao, transparente. Sobre fondo claro y en papel. |
-| `trikyname-icon-512.png` | Icono de desarrollador (Play, IGF, Steam). |
-| `trikyname-avatar-400.png` | Avatar de redes. Cuadrado; X lo recorta a círculo solo. |
-| `trikyname-favicon-64.png` | Favicon. |
-| `trikyname-header-1500x500.png` | Cabecera de X. **Pareja del avatar** — ver abajo. |
+
+### `redes/` — lo que se sube a un perfil
+
+| Fichero | Para qué |
+|---|---|
+| `trikyname-avatar-400.png` | Avatar. Cuadrado; X lo recorta a círculo solo. |
+| `trikyname-header-1500x500.png` | Cabecera de X. **La que se sube.** |
 | `trikyname-header-1500x500-alpha.png` | La misma con alfa, para cuando el fondo lo ponga otro. |
+
+### `producto/` — donde la marca acompaña a un juego
+
+| Fichero | Para qué |
+|---|---|
+| `trikyname-icon-512.png` | Icono de desarrollador (Play, IGF, Steam). |
+| `trikyname-favicon-64.png` | Favicon. |
 | `trikyname-splash-1920x1080.png` | Pantalla de arranque de los juegos. |
 
 ⚠ **La versión pequeña no es la grande reducida.** Las pepitas pasan de r5 a r9 y las migas se
