@@ -27,12 +27,36 @@ Los SVG usan `currentColor`, así que una sola ruta sirve para claro y para oscu
 | `trikyname-icon-512.png` | Icono de desarrollador (Play, IGF, Steam). |
 | `trikyname-avatar-400.png` | Avatar de redes. Cuadrado; X lo recorta a círculo solo. |
 | `trikyname-favicon-64.png` | Favicon. |
-| `trikyname-header-1500x500.png` | Cabecera de X. |
+| `trikyname-header-1500x500.png` | Cabecera de X. **Pareja del avatar** — ver abajo. |
+| `trikyname-header-1500x500-alpha.png` | La misma con alfa, para cuando el fondo lo ponga otro. |
 | `trikyname-splash-1920x1080.png` | Pantalla de arranque de los juegos. |
 
 ⚠ **La versión pequeña no es la grande reducida.** Las pepitas pasan de r5 a r9 y las migas se
 van. A 16 px las pepitas del tamaño grande se cierran solas y la galleta queda como un círculo
 liso; engordándolas siguen leyéndose. Las migas a ese tamaño son suciedad, no migas.
+
+## El avatar y la cabecera son UNA pieza en dos ficheros
+
+Se ven juntos —X superpone el avatar sobre la esquina inferior izquierda de la cabecera—, así que
+repetir el símbolo a dos tamaños queda pobre. **Se complementan en vez de repetirse:**
+
+- El **avatar** es la galleta con el mordisco. Es la única pieza **con fondo pintado**: X lo
+  recorta a círculo y el Cacao de dentro hace de plato.
+- La **cabecera** es lo que pasa **fuera** del mordisco: un solo arco de migas que nace abajo a la
+  izquierda —justo donde el avatar la tapa— y crece hasta la pepita verde pegada al wordmark.
+  Arriba a la derecha, una línea de estado: qué hay publicado y qué viene.
+
+⚠ **La esquina inferior izquierda de la cabecera va vacía a propósito.** Es la que tapa el avatar.
+
+🔴 **La cabecera se sube CON FONDO PINTADO aunque el diseño la define transparente**, y no es un
+descuido: X reencoda las cabeceras y el alfa se pierde. Sobre tema claro, crema sobre blanco es
+una cabecera en blanco. Pintada se ve idéntica sobre el tema oscuro, que es para el que está
+pensada. La versión con alfa está ahí para todo lo demás.
+
+🔵 **Y el avatar ocupa el 79,5 % del lienzo, no el 68 %.** Ese 68 salió de un cálculo correcto
+para otro caso: un símbolo suelto sobre un cuadrado, donde las esquinas de su caja se salen del
+recorte circular. Aquí el fondo **es** el plato, así que lo único que tiene que caber dentro del
+círculo son las **migas**, y las tres caen holgadas.
 
 ## Reglas mínimas
 
