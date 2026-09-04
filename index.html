@@ -6,109 +6,162 @@
 <title>Trikyname — Álvaro Colom, game developer</title>
 <meta name="description" content="Álvaro Colom (Trikyname) makes small games on his own, from Spain. Currently: Crystalysis, a slingshot roguelite on Android.">
 <meta property="og:title" content="Trikyname">
-<meta property="og:description" content="A solo game developer in Spain. Currently making Crystalysis.">
-<meta property="og:image" content="crystalysis-keyart.png">
+<meta property="og:description" content="Games with one rule bent. Made by one person in Spain.">
+<meta property="og:image" content="brand/trikyname-icon-512.png">
 <meta property="og:type" content="website">
-<link rel="icon" href="crystalysis-icon.png">
+<link rel="icon" href="brand/trikyname-favicon-64.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-  /* 🔴 Esta pagina NO usa la paleta de Crystalysis, y es deliberado. Mismo criterio que la
-     marca: el estudio no puede vestirse del juego, o el dia que haya un segundo juego que no
-     sea cian el sitio miente. Aqui todo es tinta y papel, y el UNICO color de la pagina es el
-     key art del propio juego — asi Crystalysis destaca por contraste en vez de teñirlo todo. */
+  /* Sistema de identidad Trikyname v1 (Claude Design, 04/09). Los cinco colores, las dos
+     tipografías y la animación del símbolo salen de `Trikyname Brand System.dc.html` y no se
+     improvisan aquí.
+
+     🔴 Y son DELIBERADAMENTE los del estudio, no los del juego: Crystalysis es cian frío sobre
+     negro azulado, y esto es crema sobre marrón cálido. Si el estudio se vistiera de su único
+     juego, el día que salga uno que no se le parezca el sitio mentiría. */
   :root {
-    --papel:  #12100E;
-    --carta:  #1B1815;
-    --linea:  #2C2925;
-    --tinta:  #F2EEE9;
-    --tinta2: #A39C93;
-    --tinta3: #6E6862;
+    --noche:  #0F0B08;   /* fondo */
+    --cacao:  #1F1610;   /* tarjetas, pepitas */
+    --masa:   #F7EFE2;   /* galleta, texto */
+    --pepita: oklch(0.80 0.15 140);   /* acento: enlaces, botones, la miga */
+    --horno:  oklch(0.80 0.15 40);    /* segundo acento: avisos */
+    --tenue:  rgba(247,239,226,.62);
+    --leve:   rgba(247,239,226,.42);
+    --linea:  rgba(247,239,226,.12);
     color-scheme: dark;
   }
-  @media (prefers-color-scheme: light) {
-    :root { --papel: #F7F5F2; --carta: #FFFFFF; --linea: #E2DDD6;
-            --tinta: #17140F; --tinta2: #5F584F; --tinta3: #8C857B; }
-  }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--papel); color: var(--tinta);
-         font-family: ui-serif, Georgia, "Times New Roman", serif; line-height: 1.7;
+  body { margin: 0; background: var(--noche); color: var(--masa);
+         font-family: Nunito, system-ui, sans-serif; line-height: 1.65;
          -webkit-font-smoothing: antialiased; }
-  .wrap { max-width: 660px; margin: 0 auto; padding: 68px 24px 90px; }
-  a { color: inherit; }
-  .sans { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 62px 24px 84px; }
+  a { color: var(--masa); }
+  a:hover { color: var(--pepita); }
 
-  /* El hueco de la marca. Vacio A PROPOSITO y con su etiqueta: es mas honesto un sitio
-     reservado que un logo provisional que luego cuesta quitar de todas partes. */
-  header { display: flex; align-items: center; gap: 20px; padding-bottom: 30px;
-           border-bottom: 1px solid var(--linea); }
-  .mark { width: 62px; height: 62px; flex: none; border: 1px dashed var(--linea);
-          border-radius: 4px; display: grid; place-items: center; color: var(--tinta3);
-          font-family: system-ui, sans-serif; font-size: 9px; letter-spacing: .1em;
-          text-align: center; line-height: 1.25; }
-  h1 { font-size: 32px; font-weight: 600; letter-spacing: -.01em; margin: 0; }
-  header p { margin: 4px 0 0; color: var(--tinta2); font-size: 16px;
-             font-family: system-ui, sans-serif; }
+  .label { font: 600 11px/1 Nunito, sans-serif; letter-spacing: .2em;
+           text-transform: uppercase; color: var(--leve); }
 
-  .intro { font-size: 19px; margin: 34px 0 0; }
-  .intro b { font-weight: 600; }
+  /* ── Cabecera ───────────────────────────────────────────────────────────────────────── */
+  header { display: flex; align-items: center; gap: 22px; }
+  .mark { width: 92px; height: 92px; flex: none; overflow: visible; color: var(--masa); }
+  h1 { font-family: Fredoka, system-ui, sans-serif; font-weight: 600; font-size: clamp(40px, 9vw, 62px);
+       letter-spacing: -.03em; line-height: 1; margin: 0; text-transform: lowercase; }
+  header p { margin: 6px 0 0; color: var(--tenue); font-size: 15px; }
 
-  h2 { font-family: system-ui, sans-serif; font-size: 11px; letter-spacing: .26em;
-       text-transform: uppercase; color: var(--tinta3); font-weight: 600; margin: 58px 0 0; }
+  .intro { font-size: 19px; margin: 38px 0 0; text-wrap: pretty; }
+  .intro b { font-weight: 700; }
 
-  .game { margin-top: 20px; background: var(--carta); border: 1px solid var(--linea);
-          border-radius: 8px; overflow: hidden; }
-  .game img { display: block; width: 100%; }
-  .game .body { padding: 22px 24px 24px; }
-  .game h3 { margin: 0; font-size: 23px; font-weight: 600; }
-  .game .meta { font-size: 12.5px; color: var(--tinta3); margin: 5px 0 0; letter-spacing: .04em; }
-  .game p.pitch { margin: 14px 0 0; color: var(--tinta2); }
+  h2 { margin: 56px 0 0; font: 600 11px/1 Nunito, sans-serif; letter-spacing: .2em;
+       text-transform: uppercase; color: var(--leve); }
 
-  .links { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 20px;
-           font-family: system-ui, sans-serif; }
-  .links a { text-decoration: none; font-size: 13.5px; padding: 9px 17px; border-radius: 999px;
-             border: 1px solid var(--linea); color: var(--tinta2); transition: .15s; }
-  .links a:hover { color: var(--tinta); border-color: var(--tinta3); }
-  .links a.go { background: var(--tinta); color: var(--papel); border-color: var(--tinta);
-                font-weight: 600; }
-  .links a.go:hover { opacity: .88; }
+  /* ── Juegos ─────────────────────────────────────────────────────────────────────────── */
+  .game { margin-top: 18px; background: var(--cacao); border-radius: 16px; overflow: hidden; }
+  .game img.art { display: block; width: 100%; }
+  .game .body { padding: 22px 26px 26px; }
+  .game h3 { font-family: Fredoka, sans-serif; font-weight: 600; font-size: 25px;
+             letter-spacing: -.02em; margin: 0; }
+  .game .meta { font-size: 12.5px; color: var(--leve); margin: 4px 0 0; }
+  .game p { margin: 14px 0 0; color: var(--tenue); text-wrap: pretty; }
 
-  .next { margin-top: 20px; color: var(--tinta2); }
-  .next b { color: var(--tinta); font-weight: 600; }
+  .links { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 22px; }
+  .links a { text-decoration: none; font-size: 13.5px; font-weight: 600; padding: 9px 18px;
+             border-radius: 999px; border: 1px solid var(--linea); color: var(--tenue);
+             transition: .15s; }
+  .links a:hover { color: var(--masa); border-color: rgba(247,239,226,.4); }
+  .links a.go { background: var(--pepita); border-color: var(--pepita); color: var(--noche); }
+  .links a.go:hover { color: var(--noche); filter: brightness(1.08); }
 
-  .elsewhere { margin-top: 20px; font-family: system-ui, sans-serif; font-size: 14.5px;
-               color: var(--tinta2); }
-  .elsewhere a { color: var(--tinta); text-decoration: none;
-                 border-bottom: 1px solid var(--linea); }
-  .elsewhere a:hover { border-bottom-color: var(--tinta3); }
+  .next { margin-top: 18px; color: var(--tenue); text-wrap: pretty; }
+  .next b { color: var(--masa); font-weight: 700; }
 
-  footer { margin-top: 64px; padding-top: 22px; border-top: 1px solid var(--linea);
-           font-family: system-ui, sans-serif; font-size: 12.5px; color: var(--tinta3); }
-  footer a { color: var(--tinta2); }
+  .elsewhere { margin-top: 18px; font-size: 15px; color: var(--tenue); }
+  .elsewhere a { color: var(--masa); text-decoration: none; border-bottom: 1px solid var(--linea); }
+  .elsewhere a:hover { color: var(--pepita); border-bottom-color: var(--pepita); }
+
+  footer { margin-top: 62px; padding-top: 22px; border-top: 1px solid var(--linea);
+           font-size: 12.5px; color: var(--leve); }
+
+  /* ── La animación del símbolo: la galleta llega, se lleva un bocado, saltan las pepitas
+        y las migas se posan. Es lo que EXPLICA el logo a quien lo ve por primera vez.
+        Corre una sola vez al cargar; repetirla en bucle en una cabecera es un tic. ───────── */
+  @keyframes tk-cookie {
+    0%   { transform: scale(.6); opacity: 0 }
+    18%  { transform: scale(1); opacity: 1 }
+    52%  { transform: translate(0,0) rotate(0) }
+    55%  { transform: translate(7px,-7px) rotate(8deg) }
+    58%  { transform: translate(-2px,2px) rotate(-3deg) }
+    63%, 100% { transform: translate(0,0) rotate(0) }
+  }
+  @keyframes tk-bite  { 0%, 54.9% { r: 0 } 55%, 100% { r: 17 } }
+  @keyframes tk-crumb {
+    0%, 18% { transform: translate(16px,-14px) scale(0); opacity: 0 }
+    24%     { transform: translate(16px,-14px) scale(1); opacity: 1 }
+    52%     { transform: translate(0,0) scale(1); opacity: 1 }
+    54.9%   { transform: translate(-3px,3px) scale(1); opacity: 1 }
+    55%, 100% { transform: translate(-3px,3px) scale(0); opacity: 0 }
+  }
+  @keyframes tk-chip  { 0%, 60% { transform: scale(0) } 68% { transform: scale(1.25) } 74%, 100% { transform: scale(1) } }
+  @keyframes tk-fleck {
+    0%, 54.9% { transform: translate(-10px,-8px) scale(0); opacity: 0 }
+    55%       { transform: translate(-10px,-8px) scale(1); opacity: 1 }
+    72%, 100% { transform: translate(0,0) scale(1); opacity: 1 }
+  }
+  .an-cookie { transform-origin: 48px 54px; animation: tk-cookie 2.6s cubic-bezier(.2,.8,.2,1) 1 both; }
+  .an-bite   { animation: tk-bite 2.6s linear 1 both; }
+  .an-chip   { animation: tk-chip 2.6s cubic-bezier(.3,1.4,.5,1) 1 both; }
+  .an-fleck  { animation: tk-fleck 2.6s cubic-bezier(.2,.9,.3,1) 1 both; }
+  .an-crumb  { transform-origin: 86px 18px; animation: tk-crumb 2.6s ease-in-out 1 both; }
+
+  /* Sin animación, la marca tiene que quedar en su pose FINAL, no en la inicial. */
+  @media (prefers-reduced-motion: reduce) {
+    .an-cookie, .an-bite, .an-chip, .an-fleck { animation: none; }
+    .an-bite { r: 17; }
+    .an-crumb { animation: none; opacity: 0; }
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
 
 <header>
-  <div class="mark">MARCA<br>EN CURSO</div>
+  <svg class="mark" viewBox="0 0 100 100" role="img" aria-label="Trikyname">
+    <mask id="tk">
+      <rect width="100" height="100" fill="#000"/>
+      <circle cx="48" cy="54" r="36" fill="#fff"/>
+      <circle class="an-bite" cx="80" cy="24" r="0" fill="#000"/>
+      <circle cx="38" cy="44" r="5" fill="#000"/>
+      <circle cx="58" cy="66" r="5" fill="#000"/>
+      <circle class="an-chip" cx="34" cy="68" r="4.5" fill="#000" style="transform-origin:34px 68px"/>
+    </mask>
+    <g class="an-cookie">
+      <rect width="100" height="100" fill="currentColor" mask="url(#tk)"/>
+      <circle class="an-fleck" cx="93" cy="34" r="2.6" fill="currentColor" style="transform-origin:93px 34px"/>
+      <circle class="an-fleck" cx="72" cy="6"  r="2"   fill="currentColor" style="transform-origin:72px 6px;animation-delay:.04s"/>
+      <circle class="an-fleck" cx="96" cy="24" r="1.6" fill="currentColor" style="transform-origin:96px 24px;animation-delay:.08s"/>
+    </g>
+    <circle class="an-crumb" cx="86" cy="18" r="5.5" fill="var(--pepita)"/>
+  </svg>
   <div>
-    <h1>Trikyname</h1>
+    <h1>trikyname</h1>
     <p>Álvaro Colom · game developer · Spain</p>
   </div>
 </header>
 
-<p class="intro">I make small games on my own — design, code, art and sound. <b>No publisher,
-no team, no funding.</b> Everything below shipped that way.</p>
+<p class="intro">Games with one rule bent. I make them on my own — design, code, art and sound.
+<b>No publisher, no team, no funding.</b> Everything below shipped that way.</p>
 
 <h2>Games</h2>
 
 <div class="game">
-  <img src="crystalysis-keyart.png" alt="Crystalysis key art">
+  <img class="art" src="crystalysis-keyart.png" alt="Crystalysis key art">
   <div class="body">
     <h3>Crystalysis</h3>
-    <p class="meta sans">Android · free · out now · 13 languages · PC and iOS planned</p>
-    <p class="pitch">A slingshot roguelite built on one rule: while you pull back to aim, the
-    world holds its breath. Time only moves when your ball is in flight. Defend one crystal
-    from endless waves with a ball that never dies but does slow down — and damage is speed.</p>
+    <p class="meta">Android · free · out now · 13 languages · PC and iOS planned</p>
+    <p>A slingshot roguelite built on one rule: while you pull back to aim, the world holds its
+    breath. Time only moves when your ball is in flight. Defend one crystal from endless waves
+    with a ball that never dies but does slow down, and damage is speed.</p>
     <div class="links">
       <a class="go" href="https://play.google.com/store/apps/details?id=com.Trikyname.Crystalysis">Play on Google Play</a>
       <a href="crystalysis-site/">Website</a>
@@ -120,23 +173,24 @@ no team, no funding.</b> Everything below shipped that way.</p>
 </div>
 
 <h2>What's next</h2>
-<p class="next">A <b>PC version of Crystalysis</b> — the same game rebuilt for a landscape
-screen and a mouse, headed for Steam. After that, something new. I work on one thing at a time.</p>
+<p class="next">A <b>PC version of Crystalysis</b> — the same game rebuilt for a landscape screen
+and a mouse, headed for Steam. After that, something new. I work on one thing at a time.</p>
 
 <h2>Elsewhere</h2>
 <p class="elsewhere">
+  <a href="https://twitter.com/Trikyname">Twitter</a> ·
   <a href="https://trikyname.itch.io/">itch.io</a> ·
   <a href="https://github.com/Trikyname">GitHub</a> ·
-  <a href="https://twitter.com/Trikyname">Twitter</a> ·
   <a href="mailto:trikyname@gmail.com">trikyname@gmail.com</a>
 </p>
-<p class="elsewhere" style="color:var(--tinta3)">For press: everything you need is in the
+<p class="elsewhere" style="color:var(--leve)">For press: everything you need is in the
 <a href="crystalysis-site/press.html">Crystalysis press kit</a> — screenshots, a downloadable
 trailer and logos, free to use.</p>
 
 <footer>
-  Trikyname · Álvaro Colom · Spain ·
-  <a href="crystalysis-site/privacy.html">Privacy policy</a>
+  trikyname · Álvaro Colom · Spain ·
+  <a href="crystalysis-site/privacy.html">Privacy policy</a> ·
+  <a href="brand/">Brand assets</a>
 </footer>
 
 </div>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Trikyname">
+  <title>Trikyname</title>
+  <!--
+    El símbolo del sistema de identidad: una galleta mordida, con tres pepitas y tres migas.
+
+    🔴 El mordisco y las pepitas son AGUJEROS DE VERDAD (máscara), no círculos pintados del
+    color del fondo. En la hoja de diseño van rellenos de #1F1610 porque allí el fondo siempre
+    es ése; como asset suelto eso se rompe en cuanto alguien lo pone sobre blanco, y aparece un
+    agujero negro. Es el mismo fallo que ya nos mordió con el wordmark de Crystalysis.
+
+    Va en `currentColor`, así que una sola ruta sirve para fondo oscuro y para fondo claro:
+    se hereda el color del contexto y los agujeros dejan pasar lo que haya detrás.
+
+    Geometría exacta de `Trikyname Brand System.dc.html`, sin redondear.
+  -->
+  <mask id="tk-bite">
+    <rect width="100" height="100" fill="#000"/>
+    <circle cx="48" cy="54" r="36" fill="#fff"/>
+    <circle cx="80" cy="24" r="17" fill="#000"/>
+    <circle cx="38" cy="44" r="5"   fill="#000"/>
+    <circle cx="58" cy="66" r="5"   fill="#000"/>
+    <circle cx="34" cy="68" r="4.5" fill="#000"/>
+  </mask>
+  <rect width="100" height="100" fill="currentColor" mask="url(#tk-bite)"/>
+  <!-- Las migas van fuera de la galleta y son macizas: cuentan hacia dónde fue el bocado. -->
+  <circle cx="93" cy="34" r="2.6" fill="currentColor"/>
+  <circle cx="72" cy="6"  r="2"   fill="currentColor"/>
+  <circle cx="96" cy="24" r="1.6" fill="currentColor"/>
+</svg>

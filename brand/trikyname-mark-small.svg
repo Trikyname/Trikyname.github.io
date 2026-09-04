@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Trikyname">
+  <title>Trikyname</title>
+  <!--
+    Versión para tamaños PEQUEÑOS (≤32 px): favicon, icono de desarrollador, avatares chicos.
+
+    No es la misma reducida: las pepitas ENGORDAN (5 → 9) y las migas desaparecen. Eso es
+    tamaño óptico de verdad y sale de la propia hoja de identidad, que enseña la marca a 32,
+    24 y 16 px con estos valores. A 16 px las pepitas del tamaño grande se cierran solas y la
+    galleta se convierte en un círculo liso; engordándolas siguen leyéndose como pepitas.
+    Las migas a ese tamaño ya no son migas, son suciedad.
+  -->
+  <mask id="tk-bite-s">
+    <rect width="100" height="100" fill="#000"/>
+    <circle cx="48" cy="54" r="36" fill="#fff"/>
+    <circle cx="80" cy="24" r="17"  fill="#000"/>
+    <circle cx="38" cy="44" r="9"   fill="#000"/>
+    <circle cx="58" cy="66" r="9"   fill="#000"/>
+    <circle cx="34" cy="68" r="8.5" fill="#000"/>
+  </mask>
+  <rect width="100" height="100" fill="currentColor" mask="url(#tk-bite-s)"/>
+</svg>
