@@ -1,89 +1,144 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <title>My Blog</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-  </head>
-  <body>
-    <div id="header">
-      <div class="container">
-        <a id="header-title" href="index.html">My Blog</a>
-        <ul id="header-nav">
-          <li><a href="about.html">About</a></li>
-          <li><a href="mailto:trikyname@gmail.com?subject=feedback">Contact</a></li>
-        </ul>
-      </div>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trikyname — Álvaro Colom, game developer</title>
+<meta name="description" content="Álvaro Colom (Trikyname) makes small games on his own, from Spain. Currently: Crystalysis, a slingshot roguelite on Android.">
+<meta property="og:title" content="Trikyname">
+<meta property="og:description" content="A solo game developer in Spain. Currently making Crystalysis.">
+<meta property="og:image" content="crystalysis-keyart.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="crystalysis-icon.png">
+<style>
+  /* 🔴 Esta pagina NO usa la paleta de Crystalysis, y es deliberado. Mismo criterio que la
+     marca: el estudio no puede vestirse del juego, o el dia que haya un segundo juego que no
+     sea cian el sitio miente. Aqui todo es tinta y papel, y el UNICO color de la pagina es el
+     key art del propio juego — asi Crystalysis destaca por contraste en vez de teñirlo todo. */
+  :root {
+    --papel:  #12100E;
+    --carta:  #1B1815;
+    --linea:  #2C2925;
+    --tinta:  #F2EEE9;
+    --tinta2: #A39C93;
+    --tinta3: #6E6862;
+    color-scheme: dark;
+  }
+  @media (prefers-color-scheme: light) {
+    :root { --papel: #F7F5F2; --carta: #FFFFFF; --linea: #E2DDD6;
+            --tinta: #17140F; --tinta2: #5F584F; --tinta3: #8C857B; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--papel); color: var(--tinta);
+         font-family: ui-serif, Georgia, "Times New Roman", serif; line-height: 1.7;
+         -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 660px; margin: 0 auto; padding: 68px 24px 90px; }
+  a { color: inherit; }
+  .sans { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+
+  /* El hueco de la marca. Vacio A PROPOSITO y con su etiqueta: es mas honesto un sitio
+     reservado que un logo provisional que luego cuesta quitar de todas partes. */
+  header { display: flex; align-items: center; gap: 20px; padding-bottom: 30px;
+           border-bottom: 1px solid var(--linea); }
+  .mark { width: 62px; height: 62px; flex: none; border: 1px dashed var(--linea);
+          border-radius: 4px; display: grid; place-items: center; color: var(--tinta3);
+          font-family: system-ui, sans-serif; font-size: 9px; letter-spacing: .1em;
+          text-align: center; line-height: 1.25; }
+  h1 { font-size: 32px; font-weight: 600; letter-spacing: -.01em; margin: 0; }
+  header p { margin: 4px 0 0; color: var(--tinta2); font-size: 16px;
+             font-family: system-ui, sans-serif; }
+
+  .intro { font-size: 19px; margin: 34px 0 0; }
+  .intro b { font-weight: 600; }
+
+  h2 { font-family: system-ui, sans-serif; font-size: 11px; letter-spacing: .26em;
+       text-transform: uppercase; color: var(--tinta3); font-weight: 600; margin: 58px 0 0; }
+
+  .game { margin-top: 20px; background: var(--carta); border: 1px solid var(--linea);
+          border-radius: 8px; overflow: hidden; }
+  .game img { display: block; width: 100%; }
+  .game .body { padding: 22px 24px 24px; }
+  .game h3 { margin: 0; font-size: 23px; font-weight: 600; }
+  .game .meta { font-size: 12.5px; color: var(--tinta3); margin: 5px 0 0; letter-spacing: .04em; }
+  .game p.pitch { margin: 14px 0 0; color: var(--tinta2); }
+
+  .links { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 20px;
+           font-family: system-ui, sans-serif; }
+  .links a { text-decoration: none; font-size: 13.5px; padding: 9px 17px; border-radius: 999px;
+             border: 1px solid var(--linea); color: var(--tinta2); transition: .15s; }
+  .links a:hover { color: var(--tinta); border-color: var(--tinta3); }
+  .links a.go { background: var(--tinta); color: var(--papel); border-color: var(--tinta);
+                font-weight: 600; }
+  .links a.go:hover { opacity: .88; }
+
+  .next { margin-top: 20px; color: var(--tinta2); }
+  .next b { color: var(--tinta); font-weight: 600; }
+
+  .elsewhere { margin-top: 20px; font-family: system-ui, sans-serif; font-size: 14.5px;
+               color: var(--tinta2); }
+  .elsewhere a { color: var(--tinta); text-decoration: none;
+                 border-bottom: 1px solid var(--linea); }
+  .elsewhere a:hover { border-bottom-color: var(--tinta3); }
+
+  footer { margin-top: 64px; padding-top: 22px; border-top: 1px solid var(--linea);
+           font-family: system-ui, sans-serif; font-size: 12.5px; color: var(--tinta3); }
+  footer a { color: var(--tinta2); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="mark">MARCA<br>EN CURSO</div>
+  <div>
+    <h1>Trikyname</h1>
+    <p>Álvaro Colom · game developer · Spain</p>
+  </div>
+</header>
+
+<p class="intro">I make small games on my own — design, code, art and sound. <b>No publisher,
+no team, no funding.</b> Everything below shipped that way.</p>
+
+<h2>Games</h2>
+
+<div class="game">
+  <img src="crystalysis-keyart.png" alt="Crystalysis key art">
+  <div class="body">
+    <h3>Crystalysis</h3>
+    <p class="meta sans">Android · free · out now · 13 languages · PC and iOS planned</p>
+    <p class="pitch">A slingshot roguelite built on one rule: while you pull back to aim, the
+    world holds its breath. Time only moves when your ball is in flight. Defend one crystal
+    from endless waves with a ball that never dies but does slow down — and damage is speed.</p>
+    <div class="links">
+      <a class="go" href="https://play.google.com/store/apps/details?id=com.Trikyname.Crystalysis">Play on Google Play</a>
+      <a href="crystalysis-site/">Website</a>
+      <a href="crystalysis-site/press.html">Press kit</a>
+      <a href="https://www.youtube.com/watch?v=dIeHYaN8lmE">Trailer</a>
+      <a href="crystalysis-site/privacy.html">Privacy</a>
     </div>
-    <div id="content">
-      <div class="post-container">
-        <div class="post">
-          <div class="post-author">
-            <img src="me.png" width="250px" height="250px">
-            <span><em><strong>Me</strong></em></span>
-          </div>
-          <p class="post-date">Today</p>
-          <h3 class="post-title">Becoming a web developer</h3>
-          <div class="post-content">
-            <p>
-              Hey! So this webpage is a first attempt to do
-              a website. Very easy to do so far,
-              but seems pretty time consuming
-            </p>
-            <p>
-              Using the Mimo app is pretty easy
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="post-container">
-        <div class="post">
-          <div class="post-author">
-            <img src="me.png" width="250px" height="250px">
-            <span><em><strong>HeMan</strong></em></span>
-          </div>
-          <p class="post-date">3000 years ago</p>
-          <h3 class="post-title">Oh dear</h3>
-          <div class="post-content">
-            <p>
-              what a faboulous fate...
-            </p>
-            <p>
-              Using the Mimo app is pretty easy
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="post-container">
-        <div class="post">
-          <div class="post-author">
-            <img src="me.png" width="250px" height="250px">
-            <span><em><strong>The other guy</strong></em></span>
-          </div>
-          <p class="post-date">Yesterday</p>
-          <h3 class="post-title">What am i doing here...</h3>
-          <div class="post-content">
-            <p>
-            Stop
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="footer">
-      <div class="container">
-        <div class="column">
-          <h4>My Links</h4>
-          <p>
-            <a href="https://twitter.com/Trikyname"> <em>Twitter</em> </a>
-              <br>
-            <a href="https://trikyname.itch.io/"><em>Itch.io</em></a>
-          </p>
-        </div>
-        <div class="column">
-          <h4>My Story</h4>
-          <p>Hi there! I'm an aspiring web developer.</p>
-        </div>
-      </div>
-    </div>
-  </body>
+  </div>
+</div>
+
+<h2>What's next</h2>
+<p class="next">A <b>PC version of Crystalysis</b> — the same game rebuilt for a landscape
+screen and a mouse, headed for Steam. After that, something new. I work on one thing at a time.</p>
+
+<h2>Elsewhere</h2>
+<p class="elsewhere">
+  <a href="https://trikyname.itch.io/">itch.io</a> ·
+  <a href="https://github.com/Trikyname">GitHub</a> ·
+  <a href="https://twitter.com/Trikyname">Twitter</a> ·
+  <a href="mailto:alvarocolomvidal@gmail.com">alvarocolomvidal@gmail.com</a>
+</p>
+<p class="elsewhere" style="color:var(--tinta3)">For press: everything you need is in the
+<a href="crystalysis-site/press.html">Crystalysis press kit</a> — screenshots, a downloadable
+trailer and logos, free to use.</p>
+
+<footer>
+  Trikyname · Álvaro Colom · Spain ·
+  <a href="crystalysis-site/privacy.html">Privacy policy</a>
+</footer>
+
+</div>
+</body>
 </html>
